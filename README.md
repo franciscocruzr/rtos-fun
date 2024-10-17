@@ -8,6 +8,7 @@ In order to run locally you will need:
 - Git (obviously)
 - STM32F446RE-NUCLEO board
 - STM32 ST-LINK utility
+
 Make sure that each of these requirements is in your environment path.
 
 If you want to join the fun and contribute to the project contact franciscocruzr00@gmail.com.
