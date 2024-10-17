@@ -1,0 +1,9 @@
+[submodule "thirdparty/stm32f4/hal"]
+	path = thirdparty/stm32f4/hal
+	url = https://github.com/STMicroelectronics/stm32f4xx_hal_driver.git
+[submodule "thirdparty/stm32f4/cmsis"]
+	path = thirdparty/stm32f4/cmsis
+	url = https://github.com/STMicroelectronics/cmsis_device_f4.git
+[submodule "thirdparty/cmsis"]
+	path = thirdparty/cmsis
+	url = https://github.com/ARM-software/CMSIS_5.git
