@@ -28,7 +28,7 @@ OBJ_FILES       := $(subst $(BSP_DIR)/,$(INT_DIR)/,$(OBJ_FILES))
 # Dependency files
 DEP_FILES       := $(OBJ_FILES:.o=.d)
 
-# Add make here
+# Make commands
 all: $(BIN) show.options
 	@echo "+++ Toolchain"
 	@$(CC) --version | head -n 1
@@ -44,9 +44,9 @@ $(BIN): $(OBJ_FILES) $(LD_FILE)
 	@echo "+++ Binary summary: $(BIN)"
 	@-$(SIZE) $(BIN)
 	@echo "+++ Section summary: $(BIN:.elf=.map)"
-	@grep ^.text $(BIN:.elf=.map) | awk '{print "\t" $$3 "\t" $$1}'
-	@grep ^.bss  $(BIN:.elf=.map) | awk '{print "\t" $$3 "\t" $$1}'
-	@grep ^.data $(BIN:.elf=.map) | awk '{print "\t" $$3 "\t" $$1}'
+	@grep ^.text $(BIN:.elf=.map) | awk '{print "    " $$3 "\t" $$1}'
+	@grep ^.bss  $(BIN:.elf=.map) | awk '{print "    " $$3 "\t" $$1}'
+	@grep ^.data $(BIN:.elf=.map) | awk '{print "    " $$3 "\t" $$1}'
 
 $(INT_DIR)/%.o: $(ROOT_DIR)/%.c
 	@mkdir -p $(dir $@)
@@ -110,5 +110,5 @@ show.rtos:
 # Include dependency files for next build
 -include $(DEP_FILES)
 
-.PHONY: all build.lib clean
+.PHONY: all clean
 .PHONY: show.options show.includes show.sources show.platform show.rtos

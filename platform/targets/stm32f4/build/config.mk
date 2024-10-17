@@ -57,6 +57,9 @@ CFG_DEV					+= HAL_CORTEX_MODULE_ENABLED
 #CFG_DEV					+= HAL_LPTIM_MODULE_ENABLED
 #CFG_DEV					+= HAL_MMC_MODULE_ENABLED
 
+# Board definitions
+BOOTLOADER_SIZE := 0x0000
+
 # Sources
 LD_FILE         := $(ROOT_DIR)/platform/targets/stm32f4/build/STM32F446RETX_FLASH.ld
 
