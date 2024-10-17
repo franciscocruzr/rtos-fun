@@ -1,5 +1,5 @@
 # Root directory
-ROOT_DIR	:= ../../../..
+ROOT_DIR	:= ../../../../..
 
 # Output
 BIN_FILE	:= revision-1.elf
@@ -14,7 +14,7 @@ include $(ROOT_DIR)/platform/build/common/gcc/config.mk
 include $(ROOT_DIR)/rtos/build/common/gcc/config.mk
 
 # Sources
-C_FILES += $(ROOT_DIR)/projects/build/revision-1/main.c
+C_FILES += $(ROOT_DIR)/projects/targets/revision-1/main.c
 include $(ROOT_DIR)/projects/build/common/gcc/sources.mk
 include $(ROOT_DIR)/platform/build/common/gcc/sources.mk
 include $(ROOT_DIR)/rtos/build/common/gcc/sources.mk
