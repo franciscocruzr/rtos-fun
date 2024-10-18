@@ -1,17 +1,15 @@
 /********************************************************************************
- * @file   os.c
+ * @file   pal_uart.h
  *
- * @brief  Main OS file.
+ * @brief  PAL UART general use functions header.
  ********************************************************************************/
 
-#include <stdbool.h>
+#ifndef PAL_UART_H
+#define PAL_UART_H
 
 /******************************************************************************
- * @brief  Baremetal scheduler main loop.
+ * @brief  PAL UART initialization function.
  *****************************************************************************/
-void osMainLoop(void)
-{
-  while (true)
-  {
-  }
-}
+void palInitUart(void);
+
+#endif

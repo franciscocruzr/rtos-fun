@@ -1,3 +1,9 @@
+####################################################################################################
+# @file   config.mk
+#
+# @brief  Common project makefile configuration.
+####################################################################################################
+
 # Platform targets
 PLATFORM_LIST   := $(sort $(notdir $(wildcard $(ROOT_DIR)/platform/targets/*)))
 RTOS_LIST				:= $(sort $(notdir $(wildcard $(ROOT_DIR)/rtos/targets/*)))

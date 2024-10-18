@@ -1,17 +1,15 @@
 /********************************************************************************
- * @file   os.c
+ * @file   pal_sys.h
  *
- * @brief  Main OS file.
+ * @brief  PAL SYS general use functions header.
  ********************************************************************************/
 
-#include <stdbool.h>
+#ifndef PAL_SYS_H
+#define PAL_SYS_H
 
 /******************************************************************************
- * @brief  Baremetal scheduler main loop.
+ * @brief  PAL SysTick initialization function.
  *****************************************************************************/
-void osMainLoop(void)
-{
-  while (true)
-  {
-  }
-}
+void palSysInit(void);
+
+#endif

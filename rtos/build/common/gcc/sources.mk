@@ -1,3 +1,9 @@
+####################################################################################################
+# @file   sources.mk
+#
+# @brief  Common RTOS makefile sources.
+####################################################################################################
+
 # Use target specific sources
 include $(ROOT_DIR)/rtos/targets/$(RTOS)/build/sources.mk
 

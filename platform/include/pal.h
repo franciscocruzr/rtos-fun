@@ -1,17 +1,18 @@
 /********************************************************************************
- * @file   os.c
+ * @file   pal.h
  *
- * @brief  Main OS file.
+ * @brief  Main PAL functions header.
  ********************************************************************************/
 
-#include <stdbool.h>
+#ifndef PAL_H
+#define PAL_H
 
 /******************************************************************************
- * @brief  Baremetal scheduler main loop.
+ * @brief  Main PAL initialization function. Initializes SysTick timer, GPIOs
+ *         and NVIC.
+ *
+ * @note   Needs to be called before entering the main scheduler loop.
  *****************************************************************************/
-void osMainLoop(void)
-{
-  while (true)
-  {
-  }
-}
+void palInit(void);
+
+#endif

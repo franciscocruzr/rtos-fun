@@ -1,17 +1,15 @@
 /********************************************************************************
- * @file   os.c
+ * @file   pal_gpio.h
  *
- * @brief  Main OS file.
+ * @brief  PAL GPIO general use functions header.
  ********************************************************************************/
 
-#include <stdbool.h>
+#ifndef PAL_GPIO_H
+#define PAL_GPIO_H
 
 /******************************************************************************
- * @brief  Baremetal scheduler main loop.
+ * @brief  PAL GPIO initialization function.
  *****************************************************************************/
-void osMainLoop(void)
-{
-  while (true)
-  {
-  }
-}
+void palInitGpio(void);
+
+#endif
