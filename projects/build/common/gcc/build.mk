@@ -60,6 +60,12 @@ $(INT_DIR)/%.o: $(ROOT_DIR)/%.c
 	@$(CC) $(C_FLAGS) -DMODULE_ID=$(call FILE_HASH,$<) -c -o $@ $<
 	@$(if $(DEP),$(DEP) $(DEP_FLAGS) $(subst .o,.d,$@) -MP -MT $@ $<,)
 
+$(INT_DIR)/%.o: $(ROOT_DIR)/%.s
+	@mkdir -p $(dir $@)
+	@echo "+++ Assembling: $<"
+	@$(CC) $(C_FLAGS) -DMODULE_ID=$(call FILE_HASH,$<) -c -o $@ $<
+	@$(if $(DEP),$(DEP) $(DEP_FLAGS) $(subst .o,.d,$@) -MP -MT $@ $<,)
+
 $(INT_DIR)/thirdparty/%.o: $(ROOT_DIR)/thirdparty/%.s
 	@echo "+++ Assembling thirdparty: $<"
 	@mkdir -p $(dir $@)

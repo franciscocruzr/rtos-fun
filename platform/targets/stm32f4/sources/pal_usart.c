@@ -1,20 +1,24 @@
 /********************************************************************************
- * @file   pal_uart.c
+ * @file   pal_usart.c
  *
- * @brief  PAL UART general use functions file.
+ * @brief  PAL USART general use functions file.
  ********************************************************************************/
 
 #include "stm32f4xx_hal.h"
 #include "stm32f4xx_hal_usart.h"
-#include "pal_uart.h"
+#include "pal_usart.h"
+
+#define PAL_USART_BAUD_RATE   115200
 
 /******************************************************************************
- * @brief  STM32F4 PAL UART initialization function.
+ * @brief  STM32F4 PAL USART initialization function.
  *****************************************************************************/
-void palInitUart(void)
+void palUsartInit(void)
 {
   /* Initialize NVIC for USART1. */
-  HAL_NVIC_SetPriority(USART1_IRQn, 1, 0);
+  const uint32_t preemptPrio = 1;
+  const uint32_t subPrio = 0;
+  HAL_NVIC_SetPriority(USART1_IRQn, preemptPrio, subPrio);
   HAL_NVIC_EnableIRQ(USART1_IRQn);
 
   /* Enable USART 1 clock. */
@@ -22,7 +26,7 @@ void palInitUart(void)
 
   /* Set parameters. */
   USART_HandleTypeDef husart1;
-  husart1.Init.BaudRate = 115200;
+  husart1.Init.BaudRate = PAL_USART_BAUD_RATE;
   husart1.Init.WordLength = USART_WORDLENGTH_8B;
   husart1.Init.StopBits = USART_STOPBITS_1;
   husart1.Init.Parity = USART_PARITY_NONE;

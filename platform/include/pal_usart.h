@@ -1,15 +1,15 @@
 /********************************************************************************
- * @file   pal_uart.h
+ * @file   pal_usart.h
  *
- * @brief  PAL UART general use functions header.
+ * @brief  PAL USART general use functions header.
  ********************************************************************************/
 
 #ifndef PAL_UART_H
 #define PAL_UART_H
 
 /******************************************************************************
- * @brief  PAL UART initialization function.
+ * @brief  PAL USART initialization function.
  *****************************************************************************/
-void palInitUart(void);
+void palUsartInit(void);
 
 #endif

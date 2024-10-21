@@ -14,6 +14,9 @@
  *****************************************************************************/
 void palSysInit(void)
 {
+  /* Initialize HAL module. */
+  HAL_Init();
+
   /* Initialize SysTick. */
   HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq() / PAL_TICKS_PER_SEC);
 

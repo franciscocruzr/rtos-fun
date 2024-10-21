@@ -19,6 +19,7 @@ C_FILES += $(sort $(wildcard $(ROOT_DIR)/platform/targets/stm32f4/sources/*.c))
 
 # Build C files
 C_FILES += $(ROOT_DIR)/platform/targets/stm32f4/build/retarget_gcc.c
+C_FILES += $(ROOT_DIR)/platform/targets/stm32f4/build/startup_stm32f446xx.c
 
 # Thirdparty C files
 C_FILES += \
@@ -31,5 +32,3 @@ C_FILES += \
 	$(BSP_DIR)/hal/Src/stm32f4xx_hal_uart.c \
 	$(BSP_DIR)/hal/Src/stm32f4xx_hal_usart.c \
 	$(BSP_DIR)/hal/Src/stm32f4xx_hal_cortex.c
-
-A_FILES += 	$(BSP_DIR)/cmsis/Source/Templates/gcc/startup_stm32f446xx.s
